@@ -64,6 +64,4 @@ def find_meeting_minutes(url, town):
                 )
             conn.commit()
             print(f"\nInserted {len(newLinks)} new links into Links table")
-
-  
-find_meeting_minutes('https://www.franklinvermont.org/boards-commissions-departments/selectboard', 'Franklin')
+    

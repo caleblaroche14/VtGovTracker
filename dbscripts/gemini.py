@@ -1,3 +1,6 @@
+import time
+from google.genai.errors import ServerError
+
 import warnings
 warnings.filterwarnings('ignore')
 
@@ -19,8 +22,18 @@ def generate_response(prompt):
     )
     return response.text
 
-def summarize_town_meeting_info(town, meeting_info):
+def summarize_town_meeting_info(town, meeting_info, link=''):
     promptSetup = returnJsonStruct()
-    prompt = f"Summarize the following {town} town meeting information into the following JSON structure: {promptSetup}\n\nMeeting Information:\n{meeting_info}"
-    summary = generate_response(prompt)
-    return summary
+    prompt = f"Summarize the following {town} town meeting information into the following JSON structure: {promptSetup}\n\nMeeting Information:\n{meeting_info}. Link for 'info' section:{link} \nDo not put any information other than the JSON itself. (no headers or text outside of it). Ignore arcitles and items that are about voting to open or close the meeting"
+    
+    while True:
+        try:
+            print("Generating response from Gemini API...")
+            summary = generate_response(prompt)
+            return summary
+        except ServerError as e:
+            if "UNAVAILABLE" in str(e):
+                print(f"Model unavailable (503), retrying in 10 seconds...")
+                time.sleep(10)
+            else:
+                raise

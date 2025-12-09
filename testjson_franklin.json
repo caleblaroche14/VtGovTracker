@@ -1,0 +1,288 @@
+{
+    "info": {
+        "meeting": "Franklin Selectboard Meeting",
+        "date": "2025-01-08",
+        "location": "Town Hall/Zoom hybrid",
+        "summary": "The Franklin Selectboard meeting on January 8th, 2025, covered a range of town affairs including highway department operations, zoning bylaw amendments, budget considerations, and property management. Key actions included reclassifying a portion of Richard Road, discontinuing TH 35, approving prior meeting minutes with an amendment, closing Beaver Meadow Road due to culvert failure, and authorizing payment for dog services. Discussions were also held on a VENTRAC equipment proposal, library staff retirement benefits, the Byams property assessment, and updates on Luce House maintenance and grant funding. Public comments raised concerns about Main Street speed and the VENTRAC purchase.",
+        "link": "testestetsetsetlink.com"
+    },
+    "attendees": [
+        {
+            "firstname": "Dave",
+            "lastname": "Bennion",
+            "role": "Selectboard Member"
+        },
+        {
+            "firstname": "Jay",
+            "lastname": "Hartman",
+            "role": "Selectboard Member"
+        },
+        {
+            "firstname": "Brooks",
+            "lastname": "Sturtevant",
+            "role": "Selectboard Member"
+        },
+        {
+            "firstname": "Justin",
+            "lastname": "Rainville",
+            "role": "Selectboard Member"
+        },
+        {
+            "firstname": "Michael",
+            "lastname": "Grant",
+            "role": "Selectboard Member"
+        },
+        {
+            "firstname": "Jordan",
+            "lastname": "Bushey",
+            "role": "Assistant Town Clerk"
+        },
+        {
+            "firstname": "Lisa",
+            "lastname": "Larivee",
+            "role": "Town Clerk"
+        },
+        {
+            "firstname": "Wendy",
+            "lastname": "Sargeant",
+            "role": "Guest"
+        },
+        {
+            "firstname": "Carole",
+            "lastname": "Richard",
+            "role": "Guest"
+        },
+        {
+            "firstname": "Ryan",
+            "lastname": "Lothian",
+            "role": "Guest"
+        },
+        {
+            "firstname": "Bailey",
+            "lastname": "Corwell",
+            "role": "Guest"
+        },
+        {
+            "firstname": "Bryce",
+            "lastname": "Bacheldar",
+            "role": "Guest"
+        },
+        {
+            "firstname": "Roland",
+            "lastname": "Rainville",
+            "role": "Guest"
+        },
+        {
+            "firstname": "Dan",
+            "lastname": "Larivee",
+            "role": "Guest"
+        },
+        {
+            "firstname": "Peter",
+            "lastname": "Kittell",
+            "role": "Guest"
+        },
+        {
+            "firstname": "Dianna",
+            "lastname": "Benoit Kittell",
+            "role": "Guest"
+        },
+        {
+            "firstname": "Cyrus",
+            "lastname": "Grennon",
+            "role": "Guest"
+        },
+        {
+            "firstname": "Deb",
+            "lastname": "Grennon",
+            "role": "Guest"
+        },
+        {
+            "firstname": "Paulette",
+            "lastname": "Tatro",
+            "role": "Guest"
+        },
+        {
+            "firstname": "Irene",
+            "lastname": "Robear",
+            "role": "Guest"
+        },
+        {
+            "firstname": "Josh",
+            "lastname": "Worman",
+            "role": "Virtual Attendee"
+        },
+        {
+            "firstname": "Jeff",
+            "lastname": "Teitelbaum",
+            "role": "Virtual Attendee"
+        },
+        {
+            "firstname": "Corinna",
+            "lastname": "Stanley",
+            "role": "Virtual Attendee"
+        },
+        {
+            "firstname": "Jean",
+            "lastname": "Richard",
+            "role": "Virtual Attendee"
+        },
+        {
+            "firstname": "Jennifer",
+            "lastname": "Raynak",
+            "role": "Virtual Attendee"
+        },
+        {
+            "firstname": "Jeremy",
+            "lastname": "Barnum",
+            "role": "Virtual Attendee"
+        },
+        {
+            "firstname": "Kim",
+            "lastname": "Maynard",
+            "role": "Virtual Attendee"
+        },
+        {
+            "firstname": "Wesley",
+            "lastname": "Kempton",
+            "role": "Virtual Attendee"
+        }
+    ],
+    "items": [
+        {
+            "item": "Agenda Amendments",
+            "description": "Approval to add VENTRAC equipment discussion for the Highway Department and a TAC committee member discussion to the meeting agenda.",
+            "votesY": 0,
+            "votesN": 0,
+            "passed": true
+        },
+        {
+            "item": "Reclassification of Richard Road (.04 miles)",
+            "description": "Motion to reclassify a .04 mile section of Richard Road to a Class 4 road, following a site visit and clarification with a local resident.",
+            "votesY": 5,
+            "votesN": 0,
+            "passed": true
+        },
+        {
+            "item": "Discontinuation of TH 35",
+            "description": "Motion to discontinue Town Highway 35 after a site visit and review.",
+            "votesY": 5,
+            "votesN": 0,
+            "passed": true
+        },
+        {
+            "item": "Zoning Bylaw Amendment Discussion",
+            "description": "Discussion with the Planning Commission and ZBA regarding insufficient guidance on lot square footage for decisions, particularly for converting camps to year-round use, and septic permits. A motion to table this discussion was passed.",
+            "votesY": 5,
+            "votesN": 0,
+            "passed": true
+        },
+        {
+            "item": "Approval of December 18th Minutes",
+            "description": "Motion to approve the minutes from the December 18th meeting, with a condition to amend wording in the tax assessment policy section from ‘greater than $5,000’ to ‘less than $5,000’.",
+            "votesY": 5,
+            "votesN": 0,
+            "passed": true
+        },
+        {
+            "item": "Beaver Meadow Road Closure",
+            "description": "Motion to close Beaver Meadow Road to ensure public safety, following the failure of its main culvert and ongoing interim repairs.",
+            "votesY": 5,
+            "votesN": 0,
+            "passed": true
+        },
+        {
+            "item": "VENTRAC Equipment Proposal",
+            "description": "Review of a $56,173 quote for a VENTRAC multi-purpose vehicle with three main attachments (sweeper, v-blade, pushbox) for snow removal on new sidewalks and other town uses. No decision was made.",
+            "votesY": 0,
+            "votesN": 0,
+            "passed": false
+        },
+        {
+            "item": "Budget Discussion: Library Staff Retirement Benefits",
+            "description": "Discussion regarding a past oversight in providing retirement benefits for library staff, specifically Josh since June 2019, and the need to clarify future personnel policy. Board members plan to attend a library meeting for further discussion.",
+            "votesY": 0,
+            "votesN": 0,
+            "passed": false
+        },
+        {
+            "item": "Byams Property Phase 1 Assessment",
+            "description": "Update from a meeting recommending a Phase 1 environmental assessment for the Byams property, potentially funded by brownfield grants, contingent on the Town's commitment to purchase.",
+            "votesY": 0,
+            "votesN": 0,
+            "passed": false
+        },
+        {
+            "item": "Payment for Hyde Park Dog Services",
+            "description": "Motion to approve the full payment of $2,945 to Hyde Park for the intake and holding of dogs from a town resident for 54 days.",
+            "votesY": 5,
+            "votesN": 0,
+            "passed": true
+        },
+        {
+            "item": "Luce House Plowing and Maintenance",
+            "description": "Discussion on snow plowing at the Luce House driveway (considering town takeover) and a recent emergency heating fuel delivery. Research for future projects and an engineer study are planned for Town Meeting Day presentation.",
+            "votesY": 0,
+            "votesN": 0,
+            "passed": false
+        },
+        {
+            "item": "Historical Grant for Luce House Porch",
+            "description": "Acknowledgment of receiving a Historical Grant with a $20,000 match to rebuild the Luce House porch, with work anticipated for spring 2025 (the porch roof was recently completed).",
+            "votesY": 0,
+            "votesN": 0,
+            "passed": true
+        },
+        {
+            "item": "Review Bills for Approval of Warrants",
+            "description": "The Board reviewed and signed bills for the approval of warrants.",
+            "votesY": 0,
+            "votesN": 0,
+            "passed": true
+        },
+        {
+            "item": "Meeting Adjournment",
+            "description": "Motion to adjourn the meeting.",
+            "votesY": 5,
+            "votesN": 0,
+            "passed": true
+        }
+    ],
+    "publicComments": [
+        {
+            "commenter": "Bryce Bacheldar",
+            "comment": "Suggested installing a speed radar sign on Main Street or reducing the speed limit to 25 mph due to high vehicle speeds, noting it is a state highway."
+        },
+        {
+            "commenter": "Dan Larivee",
+            "comment": "Questioned the current equipment used for sidewalk plowing and the necessity of the high-cost VENTRAC update, acknowledging its potential for multiple uses beyond snow removal."
+        }
+    ],
+    "updates": [
+        {
+            "update": "Lake Carmi Alum Treatment Notice Clarification",
+            "status": "Ongoing",
+            "details": "Public calls are being received due to vague permit application notices sent to properties abutting Lake Carmi for the Alum Treatment; the Assistant Town Clerk is providing clarification."
+        },
+        {
+            "update": "VLCT Loss Control Visit Findings",
+            "status": "New",
+            "details": "A VLCT loss control visit to the Garage, Town Office, and Library found no major concerns, but noted a short railing in the Library and the need to switch batteries in Exit signs and emergency lights."
+        },
+        {
+            "update": "Luce House Engineer Study Planning",
+            "status": "New",
+            "details": "Dave Bennion is researching future Luce House projects, stressing the need for an engineer study for definite answers, with a general plan to be presented at Town Meeting Day."
+        },
+        {
+            "update": "Historical Grant Awarded for Luce House Porch",
+            "status": "New",
+            "details": "The town has been granted a Historical Grant, with a $20,000 match, to rebuild the Luce House porch. Work is scheduled for spring 2025."
+        },
+        {
+            "update": "Ethics Commission Training Inquiry",
+            "status": "Ongoing",
+            "details": "Jordan Bushey is investigating whether Josh (Worman) will require any training related to the Ethics Commission."
+        }
+    ]
+}
