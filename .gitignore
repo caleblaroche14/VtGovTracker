@@ -2,3 +2,5 @@
 .env.local
 *.pyc
 __pycache__/
+# React Component Preview
+previewConfig.json
