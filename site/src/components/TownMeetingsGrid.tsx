@@ -19,7 +19,6 @@ const TownMeetingsGrid = ({ townid }: { townid: number }) => {
 
     const [meetings, setMeetings] = useState<TownMeeting[]>([])
     const [loading, setLoading] = useState(true)
-    const [error, setError] = useState<string | null>(null)
     const [filters] = useState({
         desc: { value: null, matchMode: FilterMatchMode.CONTAINS },
         date: { value: null, matchMode: FilterMatchMode.CONTAINS }
@@ -42,8 +41,6 @@ const TownMeetingsGrid = ({ townid }: { townid: number }) => {
 
                 //console.log(data.data);
                 setMeetings(data.data)
-            } catch (error) {
-                setError(error instanceof Error ? error.message : 'Unknown error')
             } finally {
                 setLoading(false)
             }
