@@ -21,8 +21,7 @@ const AttendeesGrid = ({ meetingid }: AttendeesGridProps) => {
 
     const [attendees, setAttendees] = useState<Attendees[]>([])
     const [loading, setLoading] = useState(true)
-    const [error, setError] = useState<string | null>(null)
-    const [filters, setFilters] = useState({
+    const [filters] = useState({
         name: { value: null, matchMode: FilterMatchMode.CONTAINS },
         role: { value: null, matchMode: FilterMatchMode.CONTAINS },
     });

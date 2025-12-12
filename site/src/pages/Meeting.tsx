@@ -16,7 +16,6 @@ const Meeting = () =>{
     const {meetingid} = useParams<{meetingid: string}>();
 
     const [meetingInfo, setMeetingInfo] = useState<MeetingInfo | null>(null);
-    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchMeetingInfo = async () => {
@@ -29,9 +28,7 @@ const Meeting = () =>{
                 setMeetingInfo(data.data);
             } catch (error) {
                 console.error("Error fetching meeting info:", error);
-            } finally {
-                setLoading(false);
-            }
+            } 
         };
         fetchMeetingInfo();
     }, [meetingid]);

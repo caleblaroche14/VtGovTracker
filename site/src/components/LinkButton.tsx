@@ -1,6 +1,6 @@
 
 import { Button } from "primereact/button";
-import { Link, type To } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 interface TownMeeting {
     id: number;
