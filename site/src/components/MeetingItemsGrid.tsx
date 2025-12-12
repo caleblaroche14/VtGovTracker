@@ -43,7 +43,7 @@ const MeetingItemsGrid = ({ meetingid }: { meetingid: number }) => {
     <div className="meeting-items-grid">
         <DataTable value={items} loading={loading} responsiveLayout="scroll">
             <Column field="item" header="Item" sortable></Column>
-            <Column field="desc" header="Description" sortable></Column>
+            <Column field="desc" header="Description" style={{minWidth: '180px'}} sortable></Column>
             <Column field="passed" header="Passed" body={(rowData) => rowData.passed === null ? 'N/A' : rowData.passed ? 'Yes' : 'No'} sortable></Column>
             <Column field="votesY" header="Votes Yes" body={(rowData) => rowData.votesY === null ? 'N/A' : rowData.votesY} sortable></Column>
             <Column field="votesN" header="Votes No" body={(rowData) => rowData.votesN === null ? 'N/A' : rowData.votesN} sortable></Column>

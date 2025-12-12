@@ -7,6 +7,22 @@
   width: 100svw;
 }
 
+/* page */
+
+.page{
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: flex-start;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.section-header{
+  margin-top: 40px;
+}
+
 /* navigation bar / Header */
 
 .header {
