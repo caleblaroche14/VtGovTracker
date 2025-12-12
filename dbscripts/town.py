@@ -15,15 +15,15 @@ class Town:
         self.weblink = weblink
         self.data = []
         self.meetings = []
-        self.id = None
+        self.id = 0
 
     def get_new_data(self, istestcase=False):
         if istestcase:
             self.createTestCase()
         else: 
             towndata = getTownInfo(self.townname)
-            self.id = towndata['id'] 
-            self.data = getTownInfo(self.townname)[1]
+            self.id = towndata[0]
+            self.data = towndata[1]
 
         # for each meeting in data, append to meetings
         for meeting in self.data:
