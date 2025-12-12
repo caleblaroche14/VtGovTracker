@@ -37,8 +37,6 @@ const AttendeesGrid = ({ meetingid }: AttendeesGridProps) => {
             const data = await response.json()
             console.log(data);
             setAttendees(data.data)
-        } catch (error) {
-            setError(error instanceof Error ? error.message : 'Unknown error')
         } finally {
             setLoading(false)
         }
