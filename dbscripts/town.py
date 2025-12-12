@@ -15,12 +15,15 @@ class Town:
         self.weblink = weblink
         self.data = []
         self.meetings = []
+        self.id = None
 
     def get_new_data(self, istestcase=False):
         if istestcase:
             self.createTestCase()
-        else:  
-            self.data = getTownInfo(self.townname)
+        else: 
+            towndata = getTownInfo(self.townname)
+            self.id = towndata['id'] 
+            self.data = getTownInfo(self.townname)[1]
 
         # for each meeting in data, append to meetings
         for meeting in self.data:
@@ -36,10 +39,10 @@ class Town:
 
                     # header info
                     cursor.execute(
-                        """INSERT INTO "Meetings" ("town", "date", "desc","link") VALUES (%s, %s, %s, %s)
+                        """INSERT INTO "Meetings" ("town","townid", "date", "desc","link") VALUES (%s, %s, %s, %s, %s)
                         RETURNING "id"
                         """,
-                        (self.townname, meeting['info']['date'], meeting['info']['summary'], meeting['info']['link'])
+                        (self.townname, self.id, meeting['info']['date'], meeting['info']['summary'], meeting['info']['link'])
                     )
                     meeting_row = cursor.fetchone()
                     if meeting_row is None:

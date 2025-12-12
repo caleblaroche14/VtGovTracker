@@ -38,6 +38,7 @@ def getTownInfo(town):
     with conn.cursor(cursor_factory=RealDictCursor) as cursor:
         cursor.execute(f'SELECT * FROM "Towns" WHERE "Town" = \'{town}\'')
         row = cursor.fetchone()
+        townid = row['id']
         data_type = row['DataType']
         conn.close()
 
@@ -52,4 +53,4 @@ def getTownInfo(town):
 
             if text != '':
                 jsonData.append(sanitize_json(summarize_town_meeting_info(town, text, link)))
-    return jsonData
+    return [townid, jsonData]

@@ -1,42 +1,75 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* main app container */
+
+#main-app{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100svw;
+}
+
+/* navigation bar / Header */
+
+.header {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-bar {
+  background-color: #8a8a8a;
+  align-items: center;
+  width: 100%;
+}
+
+.nav-button {
+  color: white;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: .3s;
+  padding: 0px 10px;
+}
+
+.nav-button:hover {
+  background-color: black;
+  color: white;
+  transition: 0s;
+}
+
+
+/* Home page */
+#franklin{
+  height: 500px;
+  background-image: url('./assets/images/carmi2.jpg');
+
+}
+
+.towncard:hover{
+  cursor: pointer;
+  color: rgb(211, 211, 211);
+  transition: .5s;
+}
+
+.towncard{
+  background-size: fill;
+  background-position: center;
+  background-repeat: no-repeat;
   text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  color:white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 30px;
+  transition: .5s;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+.p-datatable-header .pi-filter {
+    color: var(--text-color) !important; /* Use a PrimeReact variable for consistency */
 }

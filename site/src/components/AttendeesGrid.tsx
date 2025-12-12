@@ -23,8 +23,7 @@ const AttendeesGrid = ({ meetingid }: AttendeesGridProps) => {
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState<string | null>(null)
     const [filters, setFilters] = useState({
-        firstname: { value: null, matchMode: FilterMatchMode.CONTAINS },
-        lastname: { value: null, matchMode: FilterMatchMode.CONTAINS },
+        name: { value: null, matchMode: FilterMatchMode.CONTAINS },
         role: { value: null, matchMode: FilterMatchMode.CONTAINS },
     });
         
@@ -32,7 +31,7 @@ const AttendeesGrid = ({ meetingid }: AttendeesGridProps) => {
     useEffect(() => {
         const fetchAttendees = async () => {
         try {
-            const response = await fetch('http://localhost:3001/api/getAttendees?meetingid=' + meetingid)
+            const response = await fetch('http://localhost:3001/api/getAttendees?meetingId=' + meetingid)
             if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`)
             }
@@ -51,7 +50,7 @@ const AttendeesGrid = ({ meetingid }: AttendeesGridProps) => {
     return (
         <DataTable value={attendees} 
         showGridlines 
-        paginator rows={15} 
+        paginator rows={5} 
         filters={filters}  
         filterDisplay="menu"
         loading={loading}
