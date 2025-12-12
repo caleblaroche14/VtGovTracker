@@ -2,9 +2,7 @@ import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { useState, useEffect } from 'react';
 import { FilterMatchMode } from 'primereact/api';
-import { Button } from 'primereact/button';
 import LinkButton from './LinkButton';
-import { useIsMobile } from './IsMobile';
 
 interface TownMeeting{
     id: number;
@@ -21,8 +19,7 @@ const TownMeetingsGrid = ({ townid }: { townid: number }) => {
 
     const [meetings, setMeetings] = useState<TownMeeting[]>([])
     const [loading, setLoading] = useState(true)
-    const [error, setError] = useState<string | null>(null)
-    const [filters, setFilters] = useState({
+    const [filters] = useState({
         desc: { value: null, matchMode: FilterMatchMode.CONTAINS },
         date: { value: null, matchMode: FilterMatchMode.CONTAINS }
     });

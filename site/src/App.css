@@ -23,10 +23,15 @@
   margin-top: 40px;
 }
 
+.pageheader{
+  margin: 0px;
+  padding: 0px;
+}
+
 /* navigation bar / Header */
 
 .header {
-  height: 50px;
+
   width: 100%;
   display: flex;
   justify-content: center;
@@ -88,4 +93,56 @@
 
 .p-datatable-header .pi-filter {
     color: var(--text-color) !important; /* Use a PrimeReact variable for consistency */
+}
+
+/* about page */
+
+.whoweare{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.team-members{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.team-members img{
+  border-radius: 10px;
+  height: auto;
+  width: 90vw;
+  max-width: 400px;
+}
+
+.aboutlinks{
+  height: 50px;
+  width: 100%;
+}
+
+.aboutlink{
+  background-color: #8a8a8a;
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+.aboutlink:hover{
+  background-color: black;
+  color: white;
+  transition: 0s;
+}
+
+.aboutlink:active{
+  background-color: black;
+  color: white;
 }

@@ -11,10 +11,6 @@ interface TownMeeting {
     townid: number;
 }
 
-interface LinkButtonProps {
-    rowData: TownMeeting;
-}
-
 const LinkButton = (rowData: TownMeeting) => {
     return (
         <Link to={'/meeting/' + rowData.id}>

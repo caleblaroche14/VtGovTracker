@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import TownMeetingsGrid from '../components/TownMeetingsGrid';
 
@@ -31,7 +31,7 @@ const TownInfo = () => {
         
 
     return (
-    <div style={{marginLeft: '15px'}}>
+    <div className='page' style={{marginLeft: '15px'}}>
         <h1 ><strong>{townInfo.Town}, {townInfo.State} - Meeting Info</strong></h1>    
         <TownMeetingsGrid townid={Number(townId)} />
     </div>

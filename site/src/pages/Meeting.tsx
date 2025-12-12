@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import MeetingItemsGrid from '../components/MeetingItemsGrid';
 import MeetingPublicComments from '../components/MeetingPublicComments';

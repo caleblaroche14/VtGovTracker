@@ -12,9 +12,6 @@ interface MeetingItem {
   item: string;
 }
 
-interface MeetingItemsGridProps {
-  items: MeetingItem[];
-}
 
 const MeetingItemsGrid = ({ meetingid }: { meetingid: number }) => {
 
