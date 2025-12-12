@@ -27,7 +27,8 @@ const TownMeetingsGrid = ({ townid }: { townid: number }) => {
     useEffect(() => {
         const fetchMeetings = async () => {
             try {
-                const response = await fetch('http://localhost:3001/api/getTownMeetings?townId=' + townid)
+                const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001'
+                const response = await fetch(`${apiUrl}/api/getTownMeetings?townId=${townid}`)
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`)
                 }

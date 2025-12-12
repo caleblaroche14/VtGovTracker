@@ -17,9 +17,10 @@ const MeetingUpdatesGrid = ({ meetingid }: { meetingid: number }) => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+        const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001';
         const fetchUpdates = async () => {
             try {
-                const response = await fetch(`http://localhost:3001/api/getUpdates?meetingId=${meetingid}`);
+                const response = await fetch(`${apiUrl}/api/getUpdates?meetingId=${meetingid}`);
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }

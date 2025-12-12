@@ -15,9 +15,10 @@ const MeetingPublicComments = ({ meetingid }: { meetingid: number }) => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+        const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001';
         const fetchComments = async () => {
             try {
-                const response = await fetch(`http://localhost:3001/api/getPublicComments?meetingId=${meetingid}`);
+                const response = await fetch(`${apiUrl}/api/getPublicComments?meetingId=${meetingid}`);
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }

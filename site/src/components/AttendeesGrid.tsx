@@ -28,9 +28,10 @@ const AttendeesGrid = ({ meetingid }: AttendeesGridProps) => {
         
 
     useEffect(() => {
+        const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001';
         const fetchAttendees = async () => {
         try {
-            const response = await fetch('http://localhost:3001/api/getAttendees?meetingId=' + meetingid)
+            const response = await fetch(apiUrl + '/api/getAttendees?meetingId=' + meetingid)
             if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`)
             }

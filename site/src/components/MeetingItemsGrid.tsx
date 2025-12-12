@@ -21,7 +21,8 @@ const MeetingItemsGrid = ({ meetingid }: { meetingid: number }) => {
     React.useEffect(() => {
         const fetchItems = async () => {
             try {
-                const response = await fetch(`http://localhost:3001/api/getMeetingItems?meetingId=${meetingid}`);
+                const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001'
+                const response = await fetch(`${apiUrl}/api/getMeetingItems?meetingId=${meetingid}`)
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }

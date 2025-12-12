@@ -18,9 +18,10 @@ const Meeting = () =>{
     const [meetingInfo, setMeetingInfo] = useState<MeetingInfo | null>(null);
 
     useEffect(() => {
+        const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001';
         const fetchMeetingInfo = async () => {
             try {
-                const response = await fetch(`http://localhost:3001/api/getMeetingInfo?meetingId=${meetingid}`);
+                const response = await fetch(`${apiUrl}/api/getMeetingInfo?meetingId=${meetingid}`);
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
