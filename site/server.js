@@ -4,11 +4,11 @@ import dotenv from 'dotenv';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-dotenv.config({ path: '../.env' });
+dotenv.config();
 
 const { Pool } = pkg;
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 // Enable CORS
 app.use((req, res, next) => {
