@@ -13,10 +13,9 @@ const TownInfo = () => {
     const [townInfo, setTownInfo] = useState<TownInfo>({} as TownInfo);
 
     useEffect (() => {
-        const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001';
         const fetchTownInfo = async () => {
             try {
-                const response = await fetch(`${apiUrl}/api/getTownInfo?townId=${townId}`);
+                const response = await fetch(`/api/getTownInfo?townId=${townId}`);
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
