@@ -65,7 +65,12 @@
 #franklin{
   height: 500px;
   background-image: url('./assets/images/carmi2.jpg');
+}
 
+#highgate{
+  height: 500px;
+  background-image: url('./assets/images/highgatevt.jpg');
+  background-size: cover;
 }
 
 .towncard:hover{
@@ -89,6 +94,7 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 30px;
   transition: .5s;
+  margin-top: 20px;
 }
 
 .p-datatable-header .pi-filter {

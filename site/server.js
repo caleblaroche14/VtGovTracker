@@ -4,7 +4,13 @@ import dotenv from 'dotenv';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-dotenv.config();
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+if (process.env.NODE_ENV !== 'production') {
+  dotenv.config({ path: path.join(__dirname, '../.env.local') });
+} else {
+  dotenv.config();
+}
 
 const { Pool } = pkg;
 const app = express();
@@ -173,7 +179,7 @@ app.get('/api/health', (req, res) => {
 });
 
 // Serve React build
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+//const __dirname = path.dirname(fileURLToPath(import.meta.url));
 app.use(express.static(path.join(__dirname, 'dist')));
 
 // For all other routes, serve index.html (React Router)
