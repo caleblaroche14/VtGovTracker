@@ -24,7 +24,15 @@ def generate_response(prompt):
 
 def summarize_town_meeting_info(town, meeting_info, link=''):
     promptSetup = returnJsonStruct()
-    prompt = f"Summarize the following {town} town meeting information with, reiterating only information that is in the document, into the following JSON structure: {promptSetup}\n\nMeeting Information:\n{meeting_info}. Link for 'info' section:{link} \nDo not put any information other than the JSON itself. (no headers or text outside of it). Ignore arcitles and items that are about voting to open or close the meeting. Do not make up any information that is not in the meeting info provided."
+    prompt = f"""Summarize the following {town} town meeting information with, into the following JSON structure: {promptSetup}\n\n
+    Meeting Information:\n{meeting_info}. \n
+    - Link for 'info' section:{link} \n
+    - Do not put any information other than the JSON itself. (no headers or text outside of it). \n
+    - Ignore arcitles and items that are about voting to open or close the meeting.\n
+    - Ensure the JSON is properly formatted.\n
+    - If fields are missing, place empty strings or nulls as appropriate.\n
+    - Verify that the 'date' field is in YYYY-MM-DD format and is the correct date of the meeting (not the upload date).
+    """
     
     while True:
         try:

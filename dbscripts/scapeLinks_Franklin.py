@@ -73,7 +73,7 @@ def find_meeting_minutes(url, town, id):
             links = soup.find_all('a', href=True)
             for link in links:
                 href = link['href']
-                if 'Selectboard Approved Minutes' in link.text and href.endswith('.pdf'):
+                if f'Approved Minutes' in link.text and f'{current_year}' in link.text and href.endswith('.pdf'):
                     if not href.startswith('http'):
                         href = 'https://www.highgatevt.org' + href
                     newLinks.append(href)

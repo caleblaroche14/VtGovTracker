@@ -6,8 +6,8 @@ def returnJsonStruct():
             "date": "2023-09-15",
             "location": "Town Hall/Zoom hybrid",
             "summary": "Discussion on community development projects and budget allocations.",
-            "link": "https://docs.google.com/document/d/1J7FcAgz6FfutyUD4viEYVPpwGjM_5azf/export?format=txt",
-            "title": "Franklin Selectboard Meeting"
+            "link": "",
+            "title": "Selectboard Meeting"
         },
         "attendees":
         [

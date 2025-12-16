@@ -17,6 +17,7 @@ class Town:
         self.weblink = weblink
         self.id = id
         self.data_type = ''
+        self.needsUpdate = True
 
     def get_new_data(self, istestcase=False):
         if istestcase:
