@@ -12,10 +12,10 @@ import warnings
 warnings.filterwarnings('ignore')
 
 class Town:
-    def __init__(self, townname, weblink=''):
+    def __init__(self, id, townname, weblink=''):
         self.townname = townname
         self.weblink = weblink
-        self.id = 0
+        self.id = id
         self.data_type = ''
 
     def get_new_data(self, istestcase=False):
@@ -30,7 +30,7 @@ class Town:
         #    self.upload_meeting(self, meeting)
 
     def update_data_sources(self):
-        find_meeting_minutes(self.weblink, self.townname)
+        find_meeting_minutes(self.weblink, self.townname, self.id)
 
     def upload_meeting(self, meeting):
         with psycopg2.connect(os.getenv('DATABASE_URL')) as conn:
@@ -38,14 +38,17 @@ class Town:
 
                 # header info
                 cursor.execute(
-                    """INSERT INTO "Meetings" ("town","townid", "date", "desc","link") VALUES (%s, %s, %s, %s, %s)
+                    """INSERT INTO "Meetings" ("town","townid", "date", "desc","link","title") VALUES (%s, %s, %s, %s, %s, %s)
+                    ON CONFLICT ("town", "date") DO NOTHING
                     RETURNING "id"
                     """,
-                    (self.townname, self.id, meeting['info']['date'], meeting['info']['summary'], meeting['info']['link'])
+                    (self.townname, self.id, meeting['info']['date'], meeting['info']['summary'], meeting['info']['link'], meeting['info']['title'])
                 )
                 meeting_row = cursor.fetchone()
                 if meeting_row is None:
-                    raise RuntimeError("Insert did not return an id")
+                    # meeting already exists, move on
+                    print(f'Meeting on {meeting["info"]["date"]} already exists in the database. Skipping upload.')
+                    return
                 meeting_id = meeting_row[0] 
                 print(meeting_id)
 

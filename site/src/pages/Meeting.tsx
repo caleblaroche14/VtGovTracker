@@ -39,7 +39,9 @@ const Meeting = () =>{
             <button onClick={() => window.history.back()} style={{width: '80px'}}>Back</button> 
 
             <div className="headerinfo">
-                <h1>{meetingInfo?.date}</h1>
+                <h1>{meetingInfo?.title}</h1>
+                <br />
+                <h2>{meetingInfo?.date}</h2>
                 <h2>{meetingInfo?.desc}</h2>
             </div>
             

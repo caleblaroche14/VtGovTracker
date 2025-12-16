@@ -17,7 +17,7 @@ load_dotenv()
 conn = psycopg2.connect(os.getenv('DATABASE_URL'))
 
 
-def find_meeting_minutes(url, town):
+def find_meeting_minutes(url, town, id):
 
     newLinks = []
 
@@ -84,7 +84,7 @@ def find_meeting_minutes(url, town):
         existing_links = [row['Link'] for row in cursor.fetchall()]
 
     # Remove newLinks that already exist in Links table
-    newLinks = [link for link in newLinks if link not in existing_links]
+    newLinks = [link for link in newLinks if link.strip().replace('\n', ' ').replace('\r', '').replace(' ', '') not in existing_links]
     print(f"\nFiltered newLinks (removed {len(existing_links)} matches): {newLinks}")
 
     # Insert newLinks into the Links table
@@ -93,10 +93,10 @@ def find_meeting_minutes(url, town):
             for link in newLinks:
                 cursor.execute(
                     """
-                    INSERT INTO "Links" ("Town", "Link", "Used")
-                    VALUES (%s, %s, %s)
+                    INSERT INTO "Links" ("townid","Town", "Link", "Used")
+                    VALUES (%s, %s, %s, %s)
                     """,
-                    (town, link.strip().replace('\n', ' ').replace('\r', '').replace(' ', ''), False)
+                    (id, town, link.strip().replace('\n', ' ').replace('\r', '').replace(' ', ''), False)
                 )
             conn.commit()
             print(f"\nInserted {len(newLinks)} new links into Links table")

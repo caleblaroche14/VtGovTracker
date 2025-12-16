@@ -8,6 +8,7 @@ interface TownMeeting{
     id: number;
     town: string;
     date: string;
+    title: string;
     desc: string;
     link: string;
     townid: number;
@@ -61,7 +62,8 @@ const TownMeetingsGrid = ({ townid }: { townid: number }) => {
         >
             <Column field="id" hidden></Column>
             <Column body={LinkButton} frozen={true} style={{width: '90px', height: '100%'}}></Column>
-            <Column field="desc" header="Description" filter={true} sortable style={{width: '50%', minHeight: '150px'}}></Column>
+            <Column field="title" header="Title" filter={true} sortable style={{width: '50%', minHeight: '150px'}}></Column>
+            <Column field="desc" header="Description" filter={true} sortable style={{width: '25%', height: '100%'}}></Column>
             <Column field="date" header="Date" sortable style={{width: '25%', height: '100%'}}></Column>
             <Column field="link" header="Source" style={{width: '25%', height: '100%'}} body={(rowData) => <a href={rowData.link} target="_blank" rel="noopener noreferrer">Source</a> }></Column>
         </DataTable>
