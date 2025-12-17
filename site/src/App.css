@@ -152,3 +152,13 @@
   background-color: black;
   color: white;
 }
+
+
+/* town info page */
+.header{
+  display: flex;
+  justify-content: space-between;
+}
+.year-card{
+  background-color: darkgrey;
+}

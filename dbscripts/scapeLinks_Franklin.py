@@ -77,6 +77,23 @@ def find_meeting_minutes(url, town, id):
                     if not href.startswith('http'):
                         href = 'https://www.highgatevt.org' + href
                     newLinks.append(href)
+
+        # 2025 TOWN MEETING DAY RESULTS
+        # go to https://www.highgatevt.org/elections-faqs and look for the link that says 2025 TOWN MEETING DAY RESULTS
+        election_results_link = ''
+        response = requests.get('https://www.highgatevt.org/elections-faqs')
+        response.raise_for_status()
+        soup = BeautifulSoup(response.content, 'html.parser')
+        element = soup.find(string=lambda text: text and '2025 TOWN MEETING DAY RESULTS' in text)
+        
+        # find the href in the element and add it to newLinks
+        if element:
+            parent = element.parent
+            election_results_link = parent['href']
+            if not election_results_link.startswith('http'):
+                election_results_link = 'https://www.highgatevt.org' + election_results_link.strip().replace('\n', ' ').replace('\r', '').replace(' ', '')
+            
+            newLinks.append(election_results_link)
         
     # insert all newLinks into Links table if they don't already exist
     with conn.cursor(cursor_factory=RealDictCursor) as cursor:
