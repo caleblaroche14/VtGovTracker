@@ -45,18 +45,21 @@ const AttendeesGrid = ({ meetingid }: AttendeesGridProps) => {
         fetchAttendees()
     }, [])
     return (
-        <DataTable value={attendees} 
-        showGridlines 
-        paginator rows={5} 
-        filters={filters}  
-        filterDisplay="menu"
-        loading={loading}
-        tableStyle={{ tableLayout: 'fixed'}}
-        >
-            <Column field="id" header="ID" hidden></Column>
-            <Column field="name" header="Name" style={{ width: '150px' }} sortable ></Column>
-            <Column field="role" header="Role" style={{ width: '150px' }} sortable ></Column>
-        </DataTable>
+        <div className="meeting-grid">
+            <div className="section-subheader">Attendees</div>
+            <DataTable value={attendees} className='meeting-grid'
+            showGridlines 
+            paginator rows={5} 
+            filters={filters}  
+            filterDisplay="menu"
+            loading={loading}
+            tableStyle={{ tableLayout: 'fixed'}}
+            >
+                <Column field="id" header="ID" hidden></Column>
+                <Column field="name" header="Name" style={{ width: '150px' }} sortable ></Column>
+                <Column field="role" header="Role" style={{ width: '150px' }} sortable ></Column>
+            </DataTable>
+        </div>
     )
 }
 

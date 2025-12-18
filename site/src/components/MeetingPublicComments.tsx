@@ -33,8 +33,9 @@ const MeetingPublicComments = ({ meetingid }: { meetingid: number }) => {
         fetchComments();
     }, [meetingid]);
     return (
-        <div>
-            <DataTable value={comments} loading={loading} responsiveLayout="scroll">
+        <div className="meeting-grid">
+            <div className="section-subheader">Public Comments</div>
+            <DataTable value={comments} loading={loading} responsiveLayout="scroll" className='meeting-grid'>
                 <Column field="commenter" header="Commenter" sortable></Column>
                 <Column field="comment" header="Comment" sortable></Column>
             </DataTable>

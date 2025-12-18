@@ -9,6 +9,8 @@ const TownMeetingsGrid = ({ townid }: { townid: number }) => {
     const [meetings, setMeetings] = useState<TownMeeting[]>([]);
     const [years, setYears] = useState<string[]>([]);
     const [monthsByYear, setMonthsByYear] = useState<Record<string,string[]>>({})
+    const [fullHeight, setFullHeight] = useState<number>(0);
+    const containerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const fetchMeetings = async () => {

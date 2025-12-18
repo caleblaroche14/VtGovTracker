@@ -35,7 +35,8 @@ const MeetingUpdatesGrid = ({ meetingid }: { meetingid: number }) => {
         fetchUpdates();
     }, [meetingid]);
     return (
-        <div className="meeting-updates-grid">
+        <div className="meeting-grid">
+            <div className="section-subheader">Town Updates</div>
             <DataTable value={updates} loading={loading} responsiveLayout="scroll">
                 <Column field="update" header="Update" sortable></Column>
                 <Column field="details" header="Details" sortable></Column>

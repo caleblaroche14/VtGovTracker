@@ -19,9 +19,10 @@ const MeetingGridCard = ({meeting}: MeetingGridCardProps) => {
     return (
         <div className="meetingcard-container">
             <div className="meetingcard-header">{meeting.title}</div>
+            <div className="meetingcard-date">{meeting.date}</div>
             <div className="meetingcard-desc">{meeting.desc}</div>
-            <button className="meetingcard-viewbtn" onClick={handleViewClick}>View</button>
-            <button className="meetingcard-source" onClick={handleSourceClick}>Source</button>
+            <button className="btn meetingcard-viewbtn" onClick={handleViewClick}>View</button>
+            <button className="btn meetingcard-source" onClick={handleSourceClick}>Source</button>
         </div>
     );
 };

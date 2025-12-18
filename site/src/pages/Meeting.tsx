@@ -36,26 +36,32 @@ const Meeting = () =>{
     return(
         <div className='page'>
 
-            <button onClick={() => window.history.back()} style={{width: '80px'}}>Back</button> 
+            <div className="topbtns">
+                <button onClick={() => window.history.back()} style={{width: '80px'}}>Back</button> 
+                <button className="source">Source</button>
+            </div>
 
             <div className="headerinfo">
                 <h1>{meetingInfo?.title}</h1>
-                <br />
                 <h2>{meetingInfo?.date}</h2>
-                <h2>{meetingInfo?.desc}</h2>
+
             </div>
-            
-            <h3 className="section-header">Discussed Items</h3>
-            <MeetingItemsGrid meetingid={Number(meetingid)} />
 
-            <h3 className="section-header">Town Updates</h3>
-            <MeetingUpdatesGrid meetingid={Number(meetingid)} />
+            <div className="meeting-details-section">
+                <div className="meeting-info-section">
+                    <div className="meeting-group">
+                        <MeetingItemsGrid meetingid={Number(meetingid)} />
+                        <MeetingUpdatesGrid meetingid={Number(meetingid)} />
+                    </div>
+                </div>
+                <div className="meeting-info-section">
+                    <div className="meeting-group">
+                        <MeetingPublicComments meetingid={Number(meetingid)} />
+                        <AttendeesGrid meetingid={Number(meetingid)} />
+                    </div>
+                </div>
 
-            <h3 className="section-header">Public Comments</h3>
-            <MeetingPublicComments meetingid={Number(meetingid)} />
-
-            <h3 className="section-header">Attendees</h3>
-            <AttendeesGrid meetingid={Number(meetingid)} />
+            </div>
         </div>
     );
 }
