@@ -1,6 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
-import LinkButton from './LinkButton';
+import { useState, useEffect } from 'react';
 import type TownMeeting from '../types/TownMeeting';
 import MeetingGridCard from './MeetingGridCard';
 
@@ -9,8 +7,6 @@ const TownMeetingsGrid = ({ townid }: { townid: number }) => {
     const [meetings, setMeetings] = useState<TownMeeting[]>([]);
     const [years, setYears] = useState<string[]>([]);
     const [monthsByYear, setMonthsByYear] = useState<Record<string,string[]>>({})
-    const [fullHeight, setFullHeight] = useState<number>(0);
-    const containerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const fetchMeetings = async () => {
