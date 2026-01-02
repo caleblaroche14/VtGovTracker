@@ -1,10 +1,22 @@
 /* main app container */
+/* color pallete 
+Color Pallet
+Primary Green's: #0b5c31 & #074a27
+Light green: #def2e8
+Background: light Gray #f9fafb
+Yellow highlights: #fff5b5
+*/
+html,body, .page{
+  background-color: #f9fafb;
+}
 
 #main-app{
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
   width: 100svw;
+  background-color: #f9fafb;
+  color: black;
 }
 
 /* page */
@@ -26,6 +38,14 @@
 .pageheader{
   margin: 0px;
   padding: 0px;
+  color: #074a27;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.pagedesc{
+  margin-top: 5px;
+  color: #4f4f4f;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 /* navigation bar / Header */
@@ -38,9 +58,11 @@
 }
 
 .nav-bar {
-  background-color: #8a8a8a;
+  background-color: #074a27;
   align-items: center;
   width: 100%;
+  color: white;
+  height: 80px;
 }
 
 .nav-button {
@@ -55,8 +77,8 @@
 }
 
 .nav-button:hover {
-  background-color: black;
-  color: white;
+  background-color: #f9fafb;
+  color: #074a27;
   transition: 0s;
 }
 
@@ -75,8 +97,12 @@
 
 .towncard:hover{
   cursor: pointer;
-  color: rgb(211, 211, 211);
+  color: #074a27;
   transition: .5s;
+}
+
+.towntitle{
+  color: white;
 }
 
 .towncard{
@@ -90,15 +116,15 @@
   justify-content: center;
   align-items: center;
 
-  color:white;
+  color: #074a27;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 30px;
   transition: .5s;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .p-datatable-header .pi-filter {
-    color: var(--text-color) !important; /* Use a PrimeReact variable for consistency */
+    color: #074a27;
 }
 
 /* about page */
@@ -136,7 +162,7 @@
 .aboutlink{
   background-color: #8a8a8a;
   text-decoration: none;
-  color: white;
+  color: #074a27;
   padding: 10px;
   border-radius: 5px;
   margin: 5px;
@@ -144,13 +170,13 @@
 
 .aboutlink:hover{
   background-color: black;
-  color: white;
+  color: #074a27;
   transition: 0s;
 }
 
 .aboutlink:active{
   background-color: black;
-  color: white;
+  color: #074a27;
 }
 
 
@@ -172,15 +198,16 @@
 
 .month-container{
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 20px;
+  width: 100%;
 }
 
 .meetingcard-container{
-  border: 1px solid black;
-  border-radius: 10px;
-  
+  border: 1px solid #cacaca;
+  border-radius: 5px;
+  width: 91vw;
+  max-width: 600px;
 }
 
 .meetingcard-header{
@@ -191,6 +218,8 @@
 
 .meetingcard-desc{
   padding: 10px;
+  height: 150px;
+  overflow: hidden;
 }
 
 .meetingcard-viewbtn{
@@ -209,10 +238,11 @@
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
+  background-color: #074a27;
 }
 
 .btn:hover{
-  background-color: black;
+  background-color: rgb(5, 48, 26);
   color: white;
   transition: 0s;
 }
@@ -225,7 +255,8 @@
 
 .month-body{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   gap: 15px;
 }
 
@@ -238,8 +269,25 @@
   width: 300px;
   padding: 8px;
   border-radius: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid #000000;
+  color: black;
+}
 
+input::placeholder {
+  color: #4f4f4f;
+  opacity: 1;
+}
+
+input::-webkit-input-placeholder {
+  color: #4f4f4f;
+}
+
+input:-moz-placeholder {
+  color: #4f4f4f;
+}
+
+input::-moz-placeholder {
+  color: #4f4f4f;
 }
 
 .date-filters{
@@ -249,6 +297,33 @@
   gap: 10px;
 
 
+}
+
+.date-filter{
+  background-color: #def2e8 !important;
+  color: black !important;
+  border: 1px solid #074a27 !important;
+  padding: 8px !important;
+  border-radius: 5px !important;
+}
+
+.date-filter::-webkit-calendar-picker-indicator {
+  filter: invert(0.3);
+  cursor: pointer;
+}
+
+/* Native date input styling */
+input[type="date"] {
+  background-color: #def2e8 !important;
+  color: black !important;
+  border: 1px solid #074a27 !important;
+  padding: 8px !important;
+  border-radius: 5px !important;
+}
+
+#vtimg{
+  padding-left: 15px;
+  height: 60px;
 }
 
 /* meeting */
@@ -261,7 +336,7 @@
 
 .meeting-grid{
   flex: 5;
-  border-radius: 15px;
+  border-radius: 5px;
   margin-bottom: 25px;
 }
 
@@ -271,6 +346,7 @@
   flex-direction: row;
   align-items: start;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .meeting-info-section{
@@ -280,16 +356,125 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 
 .section-subheader{
   font-weight:  bold;
   font-size: 20px;
   margin-left: 2px;
+    margin-left: 5px;
 }
 
 .meeting-group{
-  background-color: rgba(0, 59, 122, 0.532);
   padding: 8px;
-  border-radius: 10px;
+  border-radius: 2px;
+}
+
+
+.meeting-grid{
+  background-color: #074a27;
+  color: white;
+}
+
+.grid-card {
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  background-color: #def2e8;
+  padding: 1rem;
+  background: #f9f9f9;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.p-datatable {
+  background-color: #def2e8;
+  color: black;
+}
+
+.p-datatable .p-datatable-thead > tr > th {
+  background-color: #074a27;
+  color: white;
+}
+
+.p-datatable .p-datatable-tbody > tr {
+  background-color: #f9fafb;
+}
+
+.p-datatable .p-datatable-tbody > tr > td {
+  color: black;
+}
+
+.p-datatable .p-datatable-tbody > tr:hover {
+  background-color: #def2e8;
+}
+
+/* If you're using other PrimeReact components */
+.p-component {
+  background-color: #f9fafb !important;
+  color: black !important;
+}
+
+input{
+  background-color: #def2e8;
+  color: black;
+}
+
+/* PrimeReact Paginator styling */
+.p-paginator button {
+  background-color: #8a8a8a !important;
+  color: white !important;
+  border-color: #8a8a8a !important;
+}
+
+.p-paginator-page {
+  background-color: #074a27 !important;
+  color: white !important;
+  border-color: #074a27 !important;
+}
+
+.p-paginator-page:hover {
+  background-color: #0b5c31 !important;
+  color: white !important;
+}
+
+.p-paginator-page.p-highlight {
+  background-color: #0b5c31 !important;
+  color: white !important;
+}
+
+.p-paginator-prev,
+.p-paginator-next {
+  background-color: #8a8a8a !important;
+  color: white !important;
+  border-color: #8a8a8a !important;
+}
+
+.p-paginator-prev:hover,
+.p-paginator-next:hover {
+  background-color: #0b5c31 !important;
+  color: white !important;
+}
+
+.p-paginator-prev.p-disabled,
+.p-paginator-next.p-disabled {
+  background-color: #8a8a8a !important;
+  border-color: #8a8a8a !important;
+}
+
+.p-paginator-prev svg,
+.p-paginator-next svg {
+  color: white !important;
+  fill: white !important;
+}
+
+.p-paginator-prev.p-disabled svg,
+.p-paginator-next.p-disabled svg {
+  color: white !important;
+  fill: white !important;
+}
+
+button{
+  background-color: #074a27;
+  color: white;
 }
