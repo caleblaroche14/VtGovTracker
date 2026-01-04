@@ -160,17 +160,17 @@ html,body, .page{
 }
 
 .aboutlink{
-  background-color: #8a8a8a;
+  background-color: #074a27;
   text-decoration: none;
-  color: #074a27;
+  color: white;
   padding: 10px;
   border-radius: 5px;
   margin: 5px;
 }
 
 .aboutlink:hover{
-  background-color: black;
-  color: #074a27;
+  background-color: #0b5c31;
+  color: white;
   transition: 0s;
 }
 

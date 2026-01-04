@@ -1,3 +1,6 @@
+import liv from '../assets/images/about/olivia.png';
+
+
 const About = () => {
     return (
     <div className='page'>
@@ -37,6 +40,12 @@ const About = () => {
                     <div className="team-member">
                         <h3>Olivia Thayer</h3>
                         <p>Designer / Marketing</p>
+                    
+                        <div className="aboutlinks">
+                            <a className='aboutlink' href="https://oliviahotchkiss.carrd.co/" target="_blank" rel="noopener noreferrer">Website</a>
+                            <a className='aboutlink' href="https://www.linkedin.com/in/oliviathayer12/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                        </div>
+                    <img src={liv} alt="Olivia Thayer" />
                     </div>
                 </div>
             </div>
