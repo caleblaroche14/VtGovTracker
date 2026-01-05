@@ -7,12 +7,12 @@ const About = () => {
             <button onClick={() => window.history.back()} style={{width: '80px'}}>Back</button> 
 
             <div className="headerinfo">
-                <h1>About Vt Gov Tracker</h1>
+                <h1>About FC Gov Tracker</h1>
             </div>
 
             <div className='about-content'>
                 <p>
-                    Vt Gov Tracker is an open-source project aimed at increasing transparency and accessibility of Vermont government meetings.
+                    FC Gov Tracker is an open-source project aimed at increasing transparency and accessibility of Vermont government meetings.
                     It provides a platform for citizens to easily access meeting information, discussed items, public comments, and attendees.
                 </p>
                 <p>
