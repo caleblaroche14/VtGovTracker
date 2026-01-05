@@ -167,8 +167,8 @@ app.get('/api/getAttendees', async (req, res) => {
 });
 
 // Health check endpoint
-app.get('/api/health', (req, res) => {
-  res.json({ status: 'Server is running' });
+app.get('/health', (req, res) => {
+  res.json({ status: 'ok' });
 });
 
 app.listen(PORT, () => {
