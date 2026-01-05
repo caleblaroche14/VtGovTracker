@@ -22,6 +22,9 @@ const About = () => {
                 <p>
                     We believe that an informed citizenry is essential for a healthy democracy, and we are committed to making government proceedings more accessible to everyone.
                 </p>
+                <em style={{fontStyle: 'italic', color: 'gray'}}>
+                    We are an independent project and are not affiliated with any government entity.
+                </em>
             </div>
 
             <div className="whoweare">

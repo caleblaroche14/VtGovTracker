@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import type TownMeeting from '../types/TownMeeting';
 import MeetingGridCard from './MeetingGridCard';
 
@@ -64,6 +64,21 @@ const TownMeetingsGrid = ({ townid }: { townid: number }) => {
         return date >= start && date <= end;
     };
 
+    const matchesSearch = (meeting: TownMeeting): boolean => {
+        if (!searchText.trim()) return true;
+        
+        const searchTerms = searchText.trim().toLowerCase().split(/\s+/);
+        const searchableText = `${meeting.title || ''} ${meeting.desc || ''}`.toLowerCase();
+        
+        return searchTerms.every(term => searchableText.includes(term));
+    };
+
+    const filteredMeetings = useMemo(() => {
+        return meetings.filter(meeting =>
+            matchesSearch(meeting) && isWithinDateRange(meeting.date)
+        );
+    }, [meetings, searchText, startDate, endDate]);
+
     return (
         <div className="townmeeting-cardholder">
             <div className="search-filters">
@@ -91,48 +106,29 @@ const TownMeetingsGrid = ({ townid }: { townid: number }) => {
                 </div>
             </div>
             {years.map((year) => {
-            const yearHasMeetings = monthsByYear[year]?.some((month) =>
-                meetings.filter((meeting) => (meeting.year) === year)
-                .filter((meeting) => (meeting.month) === month)
-                .filter((meeting) => 
-                    searchText.trim() === '' || 
-                    meeting.title?.toLowerCase().includes(searchText.trim().toLowerCase()) 
-                    ||
-                    meeting.desc?.toLowerCase().includes(searchText.trim().toLowerCase())
-                )
-                .filter((meeting) => isWithinDateRange(meeting.date))
-                .length > 0
-            );
-
-            return yearHasMeetings ? (
-                <div className='year-card' key={year}>
-                <div className="year-title">{year}</div>
-                <div className="month-container">
-                    {monthsByYear[year]?.map((month) => {
-                    const filteredMeetings = meetings.filter((meeting) => (meeting.year) === year)
-                    .filter((meeting) => (meeting.month) === month)
-                    .filter((meeting) => 
-                        searchText.trim() === '' || 
-                        (meeting.title?.toLowerCase().includes(searchText.trim().toLowerCase()) 
-                        ||
-                        meeting.desc?.toLowerCase().includes(searchText.trim().toLowerCase())
-                        ))
-                    .filter((meeting) => isWithinDateRange(meeting.date));
-
-                    return filteredMeetings.length > 0 ? (
-                        <div key={`${year}-${month}`}>
-                        <div className="month-title">{month}</div>
-                        <div className="month-body">
-                            {filteredMeetings.map((meeting) => (
-                            <MeetingGridCard key={meeting.id} meeting={meeting} />
-                            ))}
+                const yearMeetings = filteredMeetings.filter(m => m.year === year);
+                
+                return yearMeetings.length > 0 ? (
+                    <div className='year-card' key={year}>
+                        <div className="year-title">{year}</div>
+                        <div className="month-container">
+                            {monthsByYear[year]?.map((month) => {
+                                const monthMeetings = yearMeetings.filter(m => m.month === month);
+                                
+                                return monthMeetings.length > 0 ? (
+                                    <div key={`${year}-${month}`}>
+                                        <div className="month-title">{month}</div>
+                                        <div className="month-body">
+                                            {monthMeetings.map((meeting) => (
+                                                <MeetingGridCard key={meeting.id} meeting={meeting} />
+                                            ))}
+                                        </div>
+                                    </div>
+                                ) : null;
+                            })}
                         </div>
-                        </div>
-                    ) : null;
-                    })}
-                </div>
-                </div>
-            ) : null;
+                    </div>
+                ) : null;
             })}
         </div>
     );
