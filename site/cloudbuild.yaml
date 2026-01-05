@@ -1,0 +1,26 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'build'
+      - '-t'
+      - 'gcr.io/$PROJECT_ID/fcgovtracker-site:$SHORT_SHA'
+      - '--build-arg'
+      - 'REACT_APP_API_URL=https://fcgovtracker-api-74269009434.us-east4.run.app'
+      - '-f'
+      - 'site/Dockerfile'
+      - '.'
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/fcgovtracker-site:$SHORT_SHA']
+
+  - name: 'gcr.io/cloud-builders/run'
+    args:
+      - 'deploy'
+      - 'fcgovtracker-site'
+      - '--image'
+      - 'gcr.io/$PROJECT_ID/fcgovtracker-site:$SHORT_SHA'
+      - '--region'
+      - 'us-east4'
+      - '--allow-unauthenticated'
+
+images: ['gcr.io/$PROJECT_ID/fcgovtracker-site:$SHORT_SHA']
