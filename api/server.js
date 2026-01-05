@@ -7,11 +7,7 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-if (process.env.NODE_ENV !== 'production') {
-  dotenv.config({ path: path.join(__dirname, '../.env.local') });
-} else {
-  dotenv.config();
-}
+dotenv.config();
 
 const { Pool } = pkg;
 const app = express();
@@ -173,15 +169,6 @@ app.get('/api/getAttendees', async (req, res) => {
 // Health check endpoint
 app.get('/api/health', (req, res) => {
   res.json({ status: 'Server is running' });
-});
-
-// Serve React build
-//const __dirname = path.dirname(fileURLToPath(import.meta.url));
-app.use(express.static(path.join(__dirname, 'dist')));
-
-// For all other routes, serve index.html (React Router)
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
 
 app.listen(PORT, () => {
