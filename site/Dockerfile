@@ -3,10 +3,6 @@ FROM node:20-alpine AS build
 
 WORKDIR /app
 
-# Set build argument for API URL
-ARG REACT_APP_API_URL=http://localhost:3001
-ENV REACT_APP_API_URL=$REACT_APP_API_URL
-
 # Copy package files and install dependencies
 COPY package*.json ./
 RUN npm ci
