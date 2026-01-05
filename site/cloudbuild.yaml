@@ -7,8 +7,9 @@ steps:
       - '--build-arg'
       - 'REACT_APP_API_URL=https://fcgovtracker-api-74269009434.us-east4.run.app'
       - '-f'
-      - 'site/Dockerfile'
+      - 'Dockerfile'
       - '.'
+    dir: 'site'
 
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/$PROJECT_ID/fcgovtracker-site:$SHORT_SHA']

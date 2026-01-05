@@ -4,11 +4,11 @@ FROM node:20-alpine AS build
 WORKDIR /app
 
 # Copy package files and install dependencies
-COPY site/package*.json ./
+COPY package*.json ./
 RUN npm ci
 
 # Copy source code
-COPY site/ .
+COPY . .
 
 # Build the React app (inject API URL if needed)
 ARG REACT_APP_API_URL
