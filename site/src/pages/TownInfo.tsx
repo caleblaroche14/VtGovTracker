@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import TownMeetingsGrid from '../components/TownMeetingsGrid';
+import API_URL from '../config';
 
 interface TownInfo{
     id: string;
@@ -15,7 +16,7 @@ const TownInfo = () => {
     useEffect (() => {
         const fetchTownInfo = async () => {
             try {
-                const response = await fetch(`/api/getTownInfo?townId=${townId}`);
+                const response = await fetch(`${API_URL}/api/getTownInfo?townId=${townId}`);
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }

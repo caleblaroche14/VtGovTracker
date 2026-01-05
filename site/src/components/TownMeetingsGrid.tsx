@@ -1,6 +1,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import type TownMeeting from '../types/TownMeeting';
 import MeetingGridCard from './MeetingGridCard';
+import API_URL from '../config';
 
 const TownMeetingsGrid = ({ townid }: { townid: number }) => {
 
@@ -14,7 +15,7 @@ const TownMeetingsGrid = ({ townid }: { townid: number }) => {
     useEffect(() => {
         const fetchMeetings = async () => {
             try {
-                const response = await fetch(`/api/getTownMeetings?townId=${townid}`);
+                const response = await fetch(`${API_URL}/api/getTownMeetings?townId=${townid}`);
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }

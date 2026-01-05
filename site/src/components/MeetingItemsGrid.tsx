@@ -1,4 +1,5 @@
 import React from 'react';
+import API_URL from '../config';
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 
@@ -21,7 +22,7 @@ const MeetingItemsGrid = ({ meetingid }: { meetingid: number }) => {
     React.useEffect(() => {
         const fetchItems = async () => {
             try {
-                const response = await fetch(`/api/getMeetingItems?meetingId=${meetingid}`)
+                const response = await fetch(`${API_URL}/api/getMeetingItems?meetingId=${meetingid}`)
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }

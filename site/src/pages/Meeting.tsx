@@ -4,6 +4,7 @@ import MeetingItemsGrid from '../components/MeetingItemsGrid';
 import MeetingPublicComments from '../components/MeetingPublicComments';
 import MeetingUpdatesGrid from '../components/MeetingUpdatesGrid';
 import AttendeesGrid from '../components/AttendeesGrid';
+import API_URL from '../config';
 
 interface MeetingInfo{
     meetingid: number,
@@ -20,7 +21,7 @@ const Meeting = () =>{
     useEffect(() => {
         const fetchMeetingInfo = async () => {
             try {
-                const response = await fetch(`/api/getMeetingInfo?meetingId=${meetingid}`);
+                const response = await fetch(`${API_URL}/api/getMeetingInfo?meetingId=${meetingid}`);
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }

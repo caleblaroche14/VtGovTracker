@@ -1,5 +1,5 @@
 import  { useState, useEffect } from 'react';
-
+import API_URL from '../config';
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 
@@ -17,7 +17,7 @@ const MeetingPublicComments = ({ meetingid }: { meetingid: number }) => {
     useEffect(() => {
         const fetchComments = async () => {
             try {
-                const response = await fetch(`/api/getPublicComments?meetingId=${meetingid}`);
+                const response = await fetch(`${API_URL}/api/getPublicComments?meetingId=${meetingid}`);
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }

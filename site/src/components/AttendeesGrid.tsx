@@ -2,6 +2,7 @@ import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { useState, useEffect } from 'react';
 import { FilterMatchMode } from 'primereact/api';
+import API_URL from '../config';
 
 interface Attendee {
     id: number;
@@ -30,7 +31,7 @@ const AttendeesGrid = ({ meetingid }: AttendeesGridProps) => {
     useEffect(() => {
         const fetchAttendees = async () => {
         try {
-            const response = await fetch('/api/getAttendees?meetingId=' + meetingid)
+            const response = await fetch(API_URL + '/api/getAttendees?meetingId=' + meetingid)
             if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`)
             }

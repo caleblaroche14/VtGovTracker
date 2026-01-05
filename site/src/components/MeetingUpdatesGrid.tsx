@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
+import API_URL from '../config';
 
 interface TownUpdate {
     id: number;
@@ -19,7 +20,7 @@ const MeetingUpdatesGrid = ({ meetingid }: { meetingid: number }) => {
     useEffect(() => {
         const fetchUpdates = async () => {
             try {
-                const response = await fetch(`/api/getUpdates?meetingId=${meetingid}`);
+                const response = await fetch(`${API_URL}/api/getUpdates?meetingId=${meetingid}`);
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
