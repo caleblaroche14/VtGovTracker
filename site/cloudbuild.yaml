@@ -14,14 +14,13 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/$PROJECT_ID/fcgovtracker-site:$SHORT_SHA']
 
-  - name: 'gcr.io/cloud-builders/run'
+  - name: 'gcr.io/cloud-builders/gcloud'
     args:
+      - 'run'
       - 'deploy'
       - 'fcgovtracker-site'
-      - '--image'
-      - 'gcr.io/$PROJECT_ID/fcgovtracker-site:$SHORT_SHA'
-      - '--region'
-      - 'us-east4'
+      - '--image=gcr.io/$PROJECT_ID/fcgovtracker-site:$SHORT_SHA'
+      - '--region=us-east4'
       - '--allow-unauthenticated'
 
 images: ['gcr.io/$PROJECT_ID/fcgovtracker-site:$SHORT_SHA']
