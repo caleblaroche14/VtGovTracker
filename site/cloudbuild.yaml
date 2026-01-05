@@ -24,3 +24,6 @@ steps:
       - '--allow-unauthenticated'
 
 images: ['gcr.io/$PROJECT_ID/fcgovtracker-site:$SHORT_SHA']
+
+options:
+  logging: CLOUD_LOGGING_ONLY
