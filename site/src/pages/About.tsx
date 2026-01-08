@@ -40,7 +40,7 @@ const About = () => {
                         <img src="https://avatars.githubusercontent.com/u/69857383?v=4" alt="Caleb Laroche" />
                     </div>
                     <div className="team-member">
-                        <h3>Olivia Thayer</h3>
+                        <h3>Olivia Hotchkiss</h3>
                         <p>Designer / Marketing</p>
                     
                         <div className="aboutlinks">
