@@ -5,10 +5,11 @@ import About from './pages/About';
 import TownInfo from './pages/TownInfo';
 import Header from './components/Header'
 import Meeting from './pages/Meeting';
-
+import Footer from './components/Footer';
 import 'primereact/resources/themes/mdc-dark-indigo/theme.css'; 
 import 'primereact/resources/primereact.min.css';                
 import 'primeicons/primeicons.css';
+
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/meeting/:meetingid" element={<Meeting />} />
         </Routes>
       </main>
+      <Footer />
     </div>
   )
 }

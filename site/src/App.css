@@ -14,10 +14,11 @@ html,body, .page{
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  width: 100svw;
+  width: 100%;
   background-color: #f9fafb;
   color: black;
-}
+  box-sizing: border-box;
+} 
 
 /* page */
 
@@ -29,6 +30,16 @@ html,body, .page{
   justify-content: flex-start;
   padding: 5px;
   overflow-y: auto;
+  overflow-x: hidden;
+  width: 100vw;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* ensures content containers fill width during loading */
+.townmeeting-cardholder {
+  width: 100%;
+  min-height: 200px;
 }
 
 .section-header{
@@ -106,21 +117,20 @@ html,body, .page{
 }
 
 .towncard{
-  background-size: fill;
-  background-position: center;
-  background-repeat: no-repeat;
-  text-align: center;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  color: #074a27;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 30px;
-  transition: .5s;
-  margin-top: 10px;
+background-size: fill;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #074a27;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+    transition: .5s;
+    margin-top: 10px;
+    height: 160px !important;
 }
 
 .p-datatable-header .pi-filter {
@@ -477,4 +487,83 @@ input{
 button{
   background-color: #074a27;
   color: white;
+}
+
+.topheaderholder{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.hometitle{
+    font-size: 40px;
+    font-weight: bold;
+    color: #074a27;
+}
+
+.footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 60px;
+    background-color: #074a27;
+    color: white;
+    margin-top: auto;
+    padding: 0 16px;
+}
+
+.footer > * {
+    min-width: 0; /* allow flex items to shrink properly */
+}
+
+/* Footer carousel for narrow screens */
+.footer-carousel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 6px;
+}
+
+.footer-carousel-item {
+    text-align: center;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.footer-carousel-dots {
+    display: flex;
+    gap: 6px;
+}
+
+.footer-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.footer-dot.active {
+    background-color: white;
+}
+
+.footer-link {
+    color: white;
+    text-decoration: underline;
+    transition: opacity 0.2s;
+}
+
+.footer-link:hover {
+    opacity: 0.8;
 }

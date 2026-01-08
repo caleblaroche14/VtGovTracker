@@ -4,8 +4,7 @@ import liv from '../assets/images/about/olivia.png';
 const About = () => {
     return (
     <div className='page'>
-            <button onClick={() => window.history.back()} style={{width: '80px'}}>Back</button> 
-
+        <div className="topheaderholder">
             <div className="headerinfo">
                 <h1>About FC Gov Tracker</h1>
             </div>
@@ -52,6 +51,7 @@ const About = () => {
                     </div>
                 </div>
             </div>
+        </div>
     </div>
     );
 }

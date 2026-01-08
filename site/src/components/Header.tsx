@@ -11,7 +11,7 @@ function Header() {
         </Link>
         
         <Link to="/about" className='nav-button'>
-          About
+          About the Project
         </Link>
 
       </nav>
